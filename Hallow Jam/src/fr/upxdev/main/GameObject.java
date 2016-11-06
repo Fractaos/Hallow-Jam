@@ -1,5 +1,5 @@
 package fr.upxdev.main;
-
+//BY FRANK THERMEAU
 import java.awt.Graphics;
 
 public abstract class GameObject {
