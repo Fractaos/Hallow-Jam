@@ -13,7 +13,6 @@ public class Game extends Canvas implements Runnable{
 	public static int storyLine=0;
 	public static int storyColumn=0;
 	public static boolean looseHp=false;
-  public static boolean test=true;
 
 	private static final long serialVersionUID = -4021390787203127274L;
 
