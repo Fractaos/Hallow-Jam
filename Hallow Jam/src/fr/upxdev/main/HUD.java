@@ -196,60 +196,60 @@ public class HUD {
 	}
 
 	public void render(Graphics g) {
-		//Rectangle d'HUD
-		g.setColor(Color.RED);
-		g.drawRect(0, 0, this.width, this.height);
-		
-		//Rectangle d'HUD choix
-		g.setColor(Color.CYAN);
-		g.drawRect(this.xChoice, this.yChoice, this.widthChoice, this.heightChoice);
-		
-		//Rectangle d'HUD texte
-		g.setColor(Color.YELLOW);
-		g.drawRect(this.xText, this.yText, this.widthText, this.heightText);
-		
-		
-		
-		//Nom
-		
-		g.setFont(new Font("Dialog", Font.BOLD, 20));
-		this.playerNameBoxWidth=g.getFontMetrics().stringWidth(playerName)+40;
-		//Rectangle de container de nom
-		g.setColor(Color.LIGHT_GRAY);
-		g.fillRect(this.playerNameBoxX, this.playerNameBoxY, this.playerNameBoxWidth, this.playerNameBoxHeight);
-		//Nom
-		g.setColor(Color.BLACK);
-		g.drawString(this.playerName, this.playerNameX, this.playerNameY);
-		
-		
-		
-		//Barre de vie vide
-		g.setColor(Color.RED);
-		g.fillRect(this.playerHealthBarX, this.playerHealthBarY, this.playerHealthBarMaxWidth, this.playerHealthBarHeight);
-		
-		//Barre de vie actuelle
-		g.setColor(Color.GREEN);
-		g.fillRect(this.playerHealthBarX, this.playerHealthBarY, this.playerHealthBarWidth, this.playerHealthBarHeight);
-		
-		//Contour de barre
-		g.setColor(Color.WHITE);
-		g.drawRect(this.playerHealthBarX, this.playerHealthBarY, this.playerHealthBarMaxWidth, this.playerHealthBarHeight);
-		
-		//Stats du joueur
-		g.setColor(Color.LIGHT_GRAY);
-		g.setFont(new Font("Dialog", Font.BOLD, 15));
-		//HP
-		g.drawString("PV : "+this.playerHP+"/"+this.playerMaxHp, this.playerHPX, this.playerHPY);
-		//Agility
-		g.drawString("Agilité : "+this.playerAgi, this.playerAgiX, this.playerAgiY);
-		//Strength
-		g.drawString("Force : "+this.playerStr, this.playerStrX, this.playerStrY);
-		//Luck
-		g.drawString("Chance : "+this.playerLk, this.playerLkX, this.playerLkY);
-		//Intel
-		g.drawString("Intelligence : "+this.playerInt, this.playerIntX, this.playerIntY);
-		//State
-		//g.drawString("Statut : "+this.playerState, this.playerStateX, this.playerStateY);
+			//Rectangle d'HUD
+			g.setColor(Color.RED);
+			g.drawRect(0, 0, this.width, this.height);
+			
+			//Rectangle d'HUD choix
+			g.setColor(Color.CYAN);
+			g.drawRect(this.xChoice, this.yChoice, this.widthChoice, this.heightChoice);
+			
+			//Rectangle d'HUD texte
+			g.setColor(Color.YELLOW);
+			g.drawRect(this.xText, this.yText, this.widthText, this.heightText);
+			
+			
+			
+			//Nom
+			
+			g.setFont(new Font("Dialog", Font.BOLD, 20));
+			this.playerNameBoxWidth=g.getFontMetrics().stringWidth(this.playerName)+40;
+			//Rectangle de container de nom
+			g.setColor(Color.LIGHT_GRAY);
+			g.fillRect(this.playerNameBoxX, this.playerNameBoxY, this.playerNameBoxWidth, this.playerNameBoxHeight);
+			//Nom
+			g.setColor(Color.BLACK);
+			g.drawString(this.playerName, this.playerNameX, this.playerNameY);
+			
+			
+			
+			//Barre de vie vide
+			g.setColor(Color.RED);
+			g.fillRect(this.playerHealthBarX, this.playerHealthBarY, this.playerHealthBarMaxWidth, this.playerHealthBarHeight);
+			
+			//Barre de vie actuelle
+			g.setColor(Color.GREEN);
+			g.fillRect(this.playerHealthBarX, this.playerHealthBarY, this.playerHealthBarWidth, this.playerHealthBarHeight);
+			
+			//Contour de barre
+			g.setColor(Color.WHITE);
+			g.drawRect(this.playerHealthBarX, this.playerHealthBarY, this.playerHealthBarMaxWidth, this.playerHealthBarHeight);
+			
+			//Stats du joueur
+			g.setColor(Color.LIGHT_GRAY);
+			g.setFont(new Font("Dialog", Font.BOLD, 15));
+			//HP
+			g.drawString("PV : "+this.playerHP+"/"+this.playerMaxHp, this.playerHPX, this.playerHPY);
+			//Agility
+			g.drawString("Agilité : "+this.playerAgi, this.playerAgiX, this.playerAgiY);
+			//Strength
+			g.drawString("Force : "+this.playerStr, this.playerStrX, this.playerStrY);
+			//Luck
+			g.drawString("Chance : "+this.playerLk, this.playerLkX, this.playerLkY);
+			//Intel
+			g.drawString("Intelligence : "+this.playerInt, this.playerIntX, this.playerIntY);
+			//State
+			//g.drawString("Statut : "+this.playerState, this.playerStateX, this.playerStateY);
 		
 	}
 

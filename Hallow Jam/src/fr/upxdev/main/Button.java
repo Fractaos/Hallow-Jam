@@ -98,7 +98,6 @@ public class Button extends GameObject{
 
 	public void render(Graphics g) {
 		if(!this.text.equals("")){
-			
 			g.setFont(new Font("Dialog", Font.BOLD, this.textSize));
 			this.width=g.getFontMetrics().stringWidth(this.text)+20;
 			this.height=g.getFontMetrics().getHeight()+5;

@@ -3,6 +3,8 @@ package fr.upxdev.main;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.JOptionPane;
+
 public class MouseInput extends MouseAdapter{
 	
 	private Handler handler;
@@ -334,9 +336,12 @@ public class MouseInput extends MouseAdapter{
 										p.setHp(0);
 									}
 								}
+								
 								break;
 							}
 							break;
+						case 9:
+							Game.menu.setMenuType(TypeMenu.GameOver);
 						}
 						break;
 					case 3:
@@ -352,7 +357,35 @@ public class MouseInput extends MouseAdapter{
 							break;
 						}
 						break;
+					case 5:
+						if(Game.gameState==State.Menu){
+							System.out.println("Button 5 Pressed!");
+							
+							for(int k=0;k<handler.object.size();k++){
+								if(handler.object.get(k).id==ID.Player){
+									Player player = (Player) handler.object.get(k);
+									if(player.getName().equals("null")){
+										player.setName(JOptionPane.showInputDialog("Quel est votre nom?"));
+										while(player.getName().length()>15){
+											player.setName(JOptionPane.showInputDialog("Quel est votre nom?"));
+										}
+										
+									}
+								}
+								handler.object.remove(tempButton);
+								
+							}
+							Game.hud=new HUD(handler);
+							
+							Game.gameState=State.Game;
+						}else if(Game.gameState==State.GameOver){
+							System.out.println("Button 5 Pressed!");
+							handler.object.remove(tempButton);
+							Game.menu.setMenuType(TypeMenu.MainMenu);
+						}
+						
 					}
+					
 					
 					
 				}

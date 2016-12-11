@@ -264,22 +264,25 @@ public class Text extends GameObject{
 
 
 	public void render(Graphics g) {
-		this.actualText=checkText(Game.storyLine, Game.storyColumn);
-		g.setColor(Color.WHITE);
-		if(this.actualText.length>=25){
-			g.setFont(new Font("Dialog", Font.BOLD, 16));
-			this.heightText=g.getFontMetrics().getHeight();
-		}else if(this.actualText.length>=20 && this.actualText.length < 35){
-			g.setFont(new Font("Dialog", Font.PLAIN, 16));
-			this.heightText=g.getFontMetrics().getHeight();
-		}else{
-			g.setFont(new Font("Dialog", Font.PLAIN, 17));
-			this.heightText=g.getFontMetrics().getHeight();
-		}
+		if(Game.gameState==State.Game){
+			this.actualText=checkText(Game.storyLine, Game.storyColumn);
+			g.setColor(Color.WHITE);
+			if(this.actualText.length>=25){
+				g.setFont(new Font("Dialog", Font.BOLD, 16));
+				this.heightText=g.getFontMetrics().getHeight();
+			}else if(this.actualText.length>=20 && this.actualText.length < 35){
+				g.setFont(new Font("Dialog", Font.PLAIN, 16));
+				this.heightText=g.getFontMetrics().getHeight();
+			}else{
+				g.setFont(new Font("Dialog", Font.PLAIN, 17));
+				this.heightText=g.getFontMetrics().getHeight();
+			}
 
-		for(int i=0;i<this.actualText.length; i++){
-			g.drawString(this.actualText[i], this.x, this.heightText*(i+1));
+			for(int i=0;i<this.actualText.length; i++){
+				g.drawString(this.actualText[i], this.x, this.heightText*(i+1));
+			}
 		}
+		
 		
 	}
 
